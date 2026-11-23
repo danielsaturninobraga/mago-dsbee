@@ -112,4 +112,995 @@
             background: #1E293B;
             border-radius: 4px;
         }
-        ::-webkit-scrollbar-thumb:hover
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-amber-400/30 selection:text-amber-200">
+
+    <!-- Textura Cinematográfica -->
+    <div class="film-grain" aria-hidden="true"></div>
+
+    <!-- ==================== 1. NAVBAR FIXA (GLASSMORPHISM) ==================== -->
+    <header class="fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+            <nav class="glass-nav rounded-2xl px-4 sm:px-6 py-3 flex items-center justify-between shadow-2xl">
+                <!-- Marca Oficial com Logo Fornecida (logo-mago.jpg) + // DSBee -->
+                <a href="#inicio" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+                    <span class="inline-flex items-center justify-center bg-[#faf9f6] rounded-xl px-2.5 py-1 shadow-md shadow-black/40 border border-[#cbd5e1]/60 ring-1 ring-[#e5c158]/35 group-hover:ring-[#e5c158]/70 transition-all">
+                        <img
+                            src="logo-mago.jpg"
+                            alt="Mago Audiovisual"
+                            class="h-7 sm:h-8 w-auto object-contain rounded-md"
+                            onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                        >
+                        <span class="hidden font-display font-extrabold text-xs sm:text-sm tracking-wider text-[#0d1b3e] px-1">MAGO</span>
+                    </span>
+                    <span class="text-slate-500 font-light text-sm sm:text-base">//</span>
+                    <span class="font-display font-extrabold text-sm sm:text-base lg:text-lg tracking-wider text-slate-100 group-hover:text-[#e5c158] transition-colors">DSBee</span>
+                </a>
+
+                <!-- Links de Navegação (Desktop) -->
+                <div class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+                    <a href="#inicio" class="hover:text-white transition-colors">Início</a>
+                    <a href="#mago" class="hover:text-amber-300 transition-colors">Mago Audiovisual</a>
+                    <a href="#dsbee" class="hover:text-emerald-300 transition-colors">DSBee Music</a>
+                    <a href="#laboratorio" class="hover:text-slate-100 transition-colors">Laboratório</a>
+                    <a href="#contato" class="hover:text-amber-300 transition-colors">Contato</a>
+                </div>
+
+                <!-- Ícones Rápidos (Spotify, TikTok, YouTube @saturninobraga, YouTube Music) -->
+                <div class="hidden md:flex items-center gap-2">
+                    <a href="https://open.spotify.com/artist/6OahEZ8b5p1Nli7Ttnaj6J" target="_blank" rel="noopener noreferrer" title="DSBee no Spotify" aria-label="DSBee no Spotify" class="p-2.5 rounded-xl bg-white/5 hover:bg-[#1DB954]/20 text-slate-300 hover:text-[#1DB954] border border-white/10 hover:border-[#1DB954]/40 transition-all">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.72 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@dsbee.media" target="_blank" rel="noopener noreferrer" title="TikTok @dsbee.media" aria-label="TikTok @dsbee.media" class="p-2.5 rounded-xl bg-white/5 hover:bg-blue-900/40 text-slate-300 hover:text-white border border-white/10 hover:border-slate-300/40 transition-all">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@saturninobraga" target="_blank" rel="noopener noreferrer" title="YouTube @saturninobraga" aria-label="YouTube @saturninobraga" class="p-2.5 rounded-xl bg-white/5 hover:bg-[#FF0000]/20 text-slate-300 hover:text-[#FF0000] border border-white/10 hover:border-[#FF0000]/40 transition-all">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                    <a href="https://music.youtube.com/channel/UCKtVceMGe8HwtbIqpV760Vw" target="_blank" rel="noopener noreferrer" title="DSBee no YouTube Music" aria-label="DSBee no YouTube Music" class="p-2.5 rounded-xl bg-white/5 hover:bg-red-500/20 text-slate-300 hover:text-red-400 border border-white/10 hover:border-red-500/40 transition-all">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm0 19.104c-3.924 0-7.104-3.18-7.104-7.104S8.076 4.896 12 4.896s7.104 3.18 7.104 7.104-3.18 7.104-7.104 7.104zm0-13.332c-3.432 0-6.228 2.796-6.228 6.228S8.568 18.228 12 18.228s6.228-2.796 6.228-6.228S15.432 5.772 12 5.772zM9.684 15.54V8.46L15.816 12l-6.132 3.54z"/></svg>
+                    </a>
+                </div>
+
+                <!-- Botão Menu Mobile -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors" aria-label="Abrir menu de navegação">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </nav>
+
+            <!-- Dropdown Menu Mobile -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-2 glass-nav rounded-2xl p-4 flex flex-col gap-2 text-sm font-medium text-slate-200 shadow-2xl">
+                <a href="#inicio" class="mobile-link py-2.5 px-3 rounded-xl hover:bg-white/5">Início</a>
+                <a href="#mago" class="mobile-link py-2.5 px-3 rounded-xl hover:bg-amber-500/10 text-amber-300">Mago Audiovisual</a>
+                <a href="#dsbee" class="mobile-link py-2.5 px-3 rounded-xl hover:bg-emerald-500/10 text-emerald-300">DSBee Music</a>
+                <a href="#laboratorio" class="mobile-link py-2.5 px-3 rounded-xl hover:bg-blue-900/30 text-slate-200">Laboratório</a>
+                <a href="#contato" class="mobile-link py-2.5 px-3 rounded-xl hover:bg-white/10">Contato</a>
+                <div class="pt-3 mt-1 border-t border-white/10 grid grid-cols-2 gap-2">
+                    <a href="https://open.spotify.com/artist/6OahEZ8b5p1Nli7Ttnaj6J" target="_blank" rel="noopener noreferrer" class="py-2 text-center rounded-xl bg-[#1DB954]/15 text-[#1DB954] text-xs font-semibold">Spotify</a>
+                    <a href="https://www.tiktok.com/@dsbee.media" target="_blank" rel="noopener noreferrer" class="py-2 text-center rounded-xl bg-blue-950/80 text-slate-200 border border-white/10 text-xs font-semibold">TikTok</a>
+                    <a href="https://www.youtube.com/@saturninobraga" target="_blank" rel="noopener noreferrer" class="py-2 text-center rounded-xl bg-[#FF0000]/20 text-red-300 border border-red-500/30 text-xs font-semibold">YouTube</a>
+                    <a href="https://music.youtube.com/channel/UCKtVceMGe8HwtbIqpV760Vw" target="_blank" rel="noopener noreferrer" class="py-2 text-center rounded-xl bg-red-500/15 text-red-300 text-xs font-semibold">YT Music</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== 2. HERO: VINHETA DE ABERTURA 16:9 + FALLBACK GRÁFICO ==================== -->
+    <section id="inicio" class="relative pt-28 sm:pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <!-- Luzes Atmosféricas Dinâmicas (Azul-marinho Aveludado + Dourado Estelar) -->
+        <div id="hero-glow-left" class="absolute -top-24 -left-24 w-80 h-80 sm:w-[36rem] sm:h-[36rem] rounded-full bg-[#1B2A59]/45 blur-[130px] pointer-events-none transition-all duration-700"></div>
+        <div id="hero-glow-right" class="absolute top-1/3 -right-24 w-80 h-80 sm:w-[34rem] sm:h-[34rem] rounded-full bg-amber-500/15 blur-[140px] pointer-events-none transition-all duration-700"></div>
+        <div id="hero-glow-accent" class="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-72 rounded-full bg-slate-300/10 blur-[140px] pointer-events-none transition-all duration-700"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto">
+            <!-- Container Widescreen 16:9 Cinematográfico -->
+            <div id="vinheta-container" class="cinema-frame rounded-3xl overflow-hidden relative aspect-video w-full">
+                <!-- Vídeo da Vinheta de Abertura -->
+                <video
+                    id="hero-vinheta"
+                    class="w-full h-full object-cover"
+                    autoplay
+                    muted
+                    playsinline
+                    poster="logo-mago.jpg"
+                >
+                    <source src="vinheta-mago.mp4" type="video/mp4">
+                </video>
+
+                <!-- Controles Discretos sobre a Vinheta (Play/Pause, Som/Mudo e Tela Cheia) -->
+                <div id="vinheta-controls" class="absolute bottom-4 right-4 z-20 flex items-center gap-2">
+                    <button
+                        type="button"
+                        id="btn-toggle-play"
+                        onclick="toggleVinhetaPlay()"
+                        class="px-3.5 py-2 rounded-xl bg-black/65 hover:bg-black/85 backdrop-blur-md border border-white/15 text-slate-200 hover:text-[#e5c158] text-xs font-medium flex items-center gap-2 transition-all"
+                        title="Reproduzir ou pausar"
+                        aria-label="Reproduzir ou pausar vinheta"
+                    >
+                        <svg id="icon-pause" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 4a1 1 0 011 1v10a1 1 0 11-2 0V5a1 1 0 011-1zm8 0a1 1 0 011 1v10a1 1 0 11-2 0V5a1 1 0 011-1z" clip-rule="evenodd"/></svg>
+                        <svg id="icon-play" class="w-4 h-4 hidden text-[#e5c158]" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+                        <span id="play-label" class="hidden sm:inline">Pausar</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btn-toggle-mute"
+                        onclick="toggleVinhetaMute()"
+                        class="px-3.5 py-2 rounded-xl bg-black/65 hover:bg-black/85 backdrop-blur-md border border-white/15 text-slate-200 hover:text-[#e5c158] text-xs font-medium flex items-center gap-2 transition-all"
+                        title="Ativar ou desativar som"
+                        aria-label="Ativar ou desativar som da vinheta"
+                    >
+                        <svg id="icon-muted" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/></svg>
+                        <svg id="icon-unmuted" class="w-4 h-4 hidden text-[#e5c158]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+                        <span id="mute-label" class="hidden sm:inline">Ativar som</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btn-fullscreen-vinheta"
+                        onclick="toggleVinhetaFullscreen()"
+                        class="px-3.5 py-2 rounded-xl bg-black/65 hover:bg-black/85 backdrop-blur-md border border-white/15 text-slate-200 hover:text-[#e5c158] text-xs font-medium flex items-center gap-2 transition-all"
+                        title="Tela cheia"
+                        aria-label="Abrir vinheta em tela cheia"
+                    >
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                        <span class="hidden sm:inline">Tela cheia</span>
+                    </button>
+                </div>
+
+                <!-- Fallback Automático: Exibe a imagem oficial logo-mago.jpg em destaque se o vídeo não estiver presente -->
+                <div id="vinheta-fallback" class="hidden absolute inset-0 z-10 flex flex-col items-center justify-center p-6 sm:p-10 text-center bg-gradient-to-br from-[#05070c] via-[#0d1b3e] to-[#05070c]">
+                    <div class="relative max-w-2xl w-full bg-[#faf9f6] rounded-2xl p-4 sm:p-6 shadow-2xl shadow-black/70 border border-[#cbd5e1]/50 ring-1 ring-[#e5c158]/35">
+                        <img
+                            src="logo-mago.jpg"
+                            alt="Mago Audiovisual"
+                            class="w-full h-auto max-h-56 sm:max-h-72 object-contain mx-auto rounded-lg"
+                            onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                        >
+                        <div class="hidden py-10 text-center">
+                            <p class="font-display font-extrabold text-2xl sm:text-4xl tracking-[0.2em] text-[#0d1b3e]">MAGO AUDIOVISUAL</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-[11px] sm:text-xs text-slate-400 max-w-md bg-black/40 border border-white/10 rounded-xl px-4 py-2">
+                        Envie <code class="text-[#e5c158] font-mono">vinheta-mago.mp4</code> e <code class="text-slate-200 font-mono">logo-mago.jpg</code> na mesma pasta do <code class="text-slate-200 font-mono">index.html</code> no GitHub.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Botões de Ação Diretos + Alternador Sutil de Foco -->
+            <div class="mt-8 flex flex-col items-center gap-6">
+                <!-- Botões Principais (3 botões) -->
+                <div class="w-full flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3.5 sm:gap-4">
+                    <a href="https://www.youtube.com/@saturninobraga" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-[#FF0000] hover:bg-[#cc0000] text-white font-bold text-sm sm:text-base shadow-lg shadow-red-600/30 border border-white/15 transition-all flex items-center justify-center gap-2.5 active:scale-[0.98]">
+                        <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                        Canal @saturninobraga
+                    </a>
+
+                    <a href="https://open.spotify.com/artist/6OahEZ8b5p1Nli7Ttnaj6J" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-[#1DB954]/15 hover:bg-[#1DB954]/25 text-emerald-300 font-semibold text-sm sm:text-base border border-[#1DB954]/40 transition-all flex items-center justify-center gap-2.5">
+                        <svg class="w-5 h-5 text-[#1DB954]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.72 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                        Ouvir DSBee no Spotify
+                    </a>
+
+                    <a href="https://www.tiktok.com/@dsbee.media" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl glass-nav hover:bg-blue-950/60 text-slate-100 font-semibold text-sm sm:text-base border border-slate-300/20 hover:border-amber-300/50 transition-all flex items-center justify-center gap-2.5">
+                        <svg class="w-5 h-5 text-slate-200" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                        TikTok @dsbee.media
+                    </a>
+                </div>
+
+                <!-- Alternador Sutil de Foco (Ajusta iluminação e destaques da página) -->
+                <div class="inline-flex items-center p-1 rounded-full glass-nav shadow-lg" role="tablist" aria-label="Alternar foco de destaque da página">
+                    <button onclick="setFocusMode('hub')" id="btn-mode-hub" class="px-4 py-1.5 rounded-full text-xs font-semibold transition-all bg-slate-100 text-slate-950 shadow">
+                        Hub Unificado
+                    </button>
+                    <button onclick="setFocusMode('mago')" id="btn-mode-mago" class="px-4 py-1.5 rounded-full text-xs font-semibold transition-all text-slate-400 hover:text-white">
+                        Mago Audiovisual
+                    </button>
+                    <button onclick="setFocusMode('dsbee')" id="btn-mode-dsbee" class="px-4 py-1.5 rounded-full text-xs font-semibold transition-all text-slate-400 hover:text-white">
+                        DSBee Music
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3. MAGO AUDIOVISUAL (PORTFÓLIO FILTRÁVEL) ==================== -->
+    <section id="mago" class="py-24 px-4 sm:px-6 lg:px-8 relative border-t border-white/10 transition-opacity duration-500">
+        <div class="max-w-7xl mx-auto">
+            <!-- Cabeçalho + Filtros -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+                <div>
+                    <div class="inline-flex items-center gap-2 text-amber-400 text-xs font-semibold uppercase tracking-[0.22em] mb-3">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                        Direção, Edição & Cinema
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-5xl font-bold text-white">Mago Audiovisual</h2>
+                </div>
+
+                <!-- Filtros: Todos, Videoclipes, Promos & TV, Projetos Autorais -->
+                <div class="flex flex-wrap gap-2" id="portfolio-filters" role="group" aria-label="Filtrar portfólio">
+                    <button data-filter="todos" class="filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-amber-400 text-slate-950 transition-all">Todos</button>
+                    <button data-filter="videoclipes" class="filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium glass-nav text-slate-300 hover:text-amber-300 transition-all">Videoclipes</button>
+                    <button data-filter="promos" class="filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium glass-nav text-slate-300 hover:text-amber-300 transition-all">Promos & TV</button>
+                    <button data-filter="autorais" class="filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium glass-nav text-slate-300 hover:text-amber-300 transition-all">Projetos Autorais</button>
+                </div>
+            </div>
+
+            <!-- Grade de Portfólio (Renderizada via JS) -->
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Preenchido dinamicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 4. DSBEE MUSIC (SPOTIFY EMBED + 6 LANÇAMENTOS REAIS) ==================== -->
+    <section id="dsbee" class="py-24 px-4 sm:px-6 lg:px-8 relative border-t border-white/10 bg-gradient-to-b from-[#05060A] via-[#0B1022] to-[#05060A] transition-opacity duration-500">
+        <div class="max-w-7xl mx-auto">
+            <!-- Cabeçalho -->
+            <div class="mb-12">
+                <div class="inline-flex items-center gap-2 text-emerald-400 text-xs font-semibold uppercase tracking-[0.22em] mb-3">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Selo Musical, Lançamentos & Trilhas
+                </div>
+                <h2 class="font-display text-3xl sm:text-5xl font-bold text-white">DSBee Music</h2>
+            </div>
+
+            <!-- Player Oficial do Spotify Incorporado -->
+            <div class="glass-card rounded-3xl p-4 sm:p-6 mb-12 border-emerald-500/20 shadow-2xl">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 px-1">
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-[#1DB954]"></span>
+                        <span class="text-xs sm:text-sm font-semibold text-slate-200 uppercase tracking-wider">Player Oficial — Spotify Artista</span>
+                    </div>
+                    <a href="https://open.spotify.com/artist/6OahEZ8b5p1Nli7Ttnaj6J" target="_blank" rel="noopener noreferrer" class="text-xs text-emerald-400 hover:text-emerald-300 font-medium">
+                        Abrir perfil completo no Spotify →
+                    </a>
+                </div>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/6OahEZ8b5p1Nli7Ttnaj6J?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="DSBee no Spotify"></iframe>
+            </div>
+
+            <!-- Grade com os 6 Lançamentos Reais -->
+            <div class="mb-6 flex items-center justify-between">
+                <h3 class="font-display text-2xl sm:text-3xl font-bold text-white">Lançamentos & Catálogo</h3>
+                <span class="text-xs text-slate-400 uppercase tracking-widest hidden sm:inline">Discografia Oficial DSBee</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
+                <!-- 1. Friburgo é uma cidadeblues -->
+                <article class="glass-card dsbee-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">Novo Lançamento</span>
+                            <span class="text-xs text-slate-500 font-mono">DSBee</span>
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-white">Friburgo é uma cidadeblues</h4>
+                        <p class="text-sm text-slate-400 mt-2">Atmosfera serrana, identidade autoral e sonoridade blues contemporânea assinada pela DSBee.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10">
+                        <a href="https://open.spotify.com/artist/6OahEZ8b5p1Nli7Ttnaj6J" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-[#1DB954]/15 hover:bg-[#1DB954]/25 text-emerald-300 border border-[#1DB954]/35 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
+                            Ouvir no Spotify ↗
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 2. No Dia Em Que Moraes Morreu -->
+                <article class="glass-card dsbee-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-amber-400/15 text-amber-300 border border-amber-400/30">Destaque • +1.2K streams na estreia</span>
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-white">No Dia Em Que Moraes Morreu</h4>
+                        <p class="text-sm text-slate-400 mt-2">Faixa marcante do catálogo com forte repercussão imediata nas plataformas de streaming.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10">
+                        <a href="https://open.spotify.com/artist/6OahEZ8b5p1Nli7Ttnaj6J" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-[#1DB954]/15 hover:bg-[#1DB954]/25 text-emerald-300 border border-[#1DB954]/35 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
+                            Ouvir no Spotify ↗
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 3. Well yu needn’t -->
+                <article class="glass-card dsbee-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-blue-500/15 text-blue-300 border border-blue-400/30">Próximo Lançamento</span>
+                            <span class="text-xs text-slate-500 font-mono">Em breve</span>
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-white">Well yu needn’t</h4>
+                        <p class="text-sm text-slate-400 mt-2">Nova obra em preparação no selo DSBee. Siga o perfil oficial para ouvir assim que estrear.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10">
+                        <a href="https://open.spotify.com/artist/6OahEZ8b5p1Nli7Ttnaj6J" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-blue-900/40 hover:bg-blue-800/50 text-slate-200 border border-blue-400/30 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
+                            Acompanhar no Spotify ↗
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 4. Saudade -->
+                <article class="glass-card dsbee-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-amber-400/15 text-amber-300 border border-amber-400/30">Single + Clipe</span>
+                            <span class="text-xs text-slate-500 font-mono">YouTube</span>
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-white">Saudade</h4>
+                        <p class="text-sm text-slate-400 mt-2">Encontro completo entre a assinatura musical da DSBee e a direção visual da Mago Audiovisual.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 grid grid-cols-2 gap-2.5">
+                        <button onclick="openSaudadeModal()" class="py-2.5 px-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-bold flex items-center justify-center gap-1.5 transition-all">
+                            ▶ Ver Clipe
+                        </button>
+                        <a href="https://youtu.be/Hh2vQ1Jjrzc" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 text-xs font-semibold flex items-center justify-center gap-1 transition-all">
+                            YouTube ↗
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 5. Luz na Serra -->
+                <article class="glass-card dsbee-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">Single • SoundOn</span>
+                            <span class="text-xs text-slate-500 font-mono">Link Oficial</span>
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-white">Luz na Serra</h4>
+                        <p class="text-sm text-slate-400 mt-2">Disponível nas principais plataformas digitais através do hub oficial de distribuição SoundOn.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10">
+                        <a href="https://sndo.ffm.to/nxnrxqb" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-300 border border-cyan-500/35 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
+                            Ouvir via SoundOn ↗
+                        </a>
+                    </div>
+                </article>
+
+                <!-- 6. Meu Lance -->
+                <article class="glass-card dsbee-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-white/10 text-slate-200 border border-white/15">Single</span>
+                            <span class="text-xs text-slate-500 font-mono">DSBee</span>
+                        </div>
+                        <h4 class="font-display text-xl font-bold text-white">Meu Lance</h4>
+                        <p class="text-sm text-slate-400 mt-2">Single oficial parte do repertório autoral DSBee disponível para streaming no Spotify.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10">
+                        <a href="https://open.spotify.com/artist/6OahEZ8b5p1Nli7Ttnaj6J" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-[#1DB954]/15 hover:bg-[#1DB954]/25 text-emerald-300 border border-[#1DB954]/35 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
+                            Ouvir no Spotify ↗
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Faixa de Links Oficiais -->
+            <div>
+                <p class="text-xs uppercase tracking-[0.22em] text-slate-400 font-semibold mb-4">Plataformas Oficiais</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <a href="https://open.spotify.com/artist/6OahEZ8b5p1Nli7Ttnaj6J" target="_blank" rel="noopener noreferrer" class="glass-card dsbee-hover rounded-2xl p-4 flex items-center gap-4 group">
+                        <div class="w-11 h-11 rounded-xl bg-[#1DB954]/15 text-[#1DB954] flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.72 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="font-display font-bold text-sm text-white group-hover:text-emerald-300 transition-colors">Spotify Artista</p>
+                            <p class="text-xs text-slate-400 truncate">Catálogo Oficial DSBee</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@dsbee.media" target="_blank" rel="noopener noreferrer" class="glass-card dsbee-hover rounded-2xl p-4 flex items-center gap-4 group">
+                        <div class="w-11 h-11 rounded-xl bg-blue-900/40 text-slate-200 flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="font-display font-bold text-sm text-white group-hover:text-amber-300 transition-colors">TikTok @dsbee.media</p>
+                            <p class="text-xs text-slate-400 truncate">Prévias, Reels & Bastidores</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/@saturninobraga" target="_blank" rel="noopener noreferrer" class="glass-card mago-hover rounded-2xl p-4 flex items-center gap-4 group">
+                        <div class="w-11 h-11 rounded-xl bg-[#FF0000]/15 text-[#FF0000] flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="font-display font-bold text-sm text-white group-hover:text-red-400 transition-colors">YouTube @saturninobraga</p>
+                            <p class="text-xs text-slate-400 truncate">Videoclipes, Direção & Portfólio</p>
+                        </div>
+                    </a>
+
+                    <a href="https://music.youtube.com/channel/UCKtVceMGe8HwtbIqpV760Vw" target="_blank" rel="noopener noreferrer" class="glass-card dsbee-hover rounded-2xl p-4 flex items-center gap-4 group">
+                        <div class="w-11 h-11 rounded-xl bg-red-500/15 text-red-400 flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm0 19.104c-3.924 0-7.104-3.18-7.104-7.104S8.076 4.896 12 4.896s7.104 3.18 7.104 7.104-3.18 7.104-7.104 7.104zm0-13.332c-3.432 0-6.228 2.796-6.228 6.228S8.568 18.228 12 18.228s6.228-2.796 6.228-6.228S15.432 5.772 12 5.772zM9.684 15.54V8.46L15.816 12l-6.132 3.54z"/></svg>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="font-display font-bold text-sm text-white group-hover:text-red-300 transition-colors">YouTube Music</p>
+                            <p class="text-xs text-slate-400 truncate">Canal Oficial de Áudio</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 5. LABORATÓRIO DE IDEIAS (ACORDEÃO) ==================== -->
+    <section id="laboratorio" class="py-24 px-4 sm:px-6 lg:px-8 relative border-t border-white/10">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 text-slate-300 text-xs font-semibold uppercase tracking-[0.22em] mb-3">
+                    <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                    Hub Criativo & Desenvolvimento
+                </div>
+                <h2 class="font-display text-3xl sm:text-5xl font-bold text-white">Laboratório de Ideias</h2>
+                <p class="text-slate-400 mt-3 max-w-2xl mx-auto">
+                    Projetos em desenvolvimento, roteiros, trilhas originais e experimentos audiovisuais. Clique em cada frente para expandir.
+                </p>
+            </div>
+
+            <div class="space-y-4" id="lab-accordion">
+                <!-- Item 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden">
+                    <button type="button" onclick="toggleAccordion(this)" class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                        <div class="flex items-center gap-4">
+                            <span class="w-10 h-10 rounded-xl bg-amber-400/15 text-amber-300 border border-amber-400/30 flex items-center justify-center font-display font-bold text-sm shrink-0">01</span>
+                            <div>
+                                <h3 class="font-display text-lg sm:text-xl font-bold text-white">Roteiros & Narrativas Audiovisuais</h3>
+                                <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Curtas autorais, videoclipes conceituais e direção criativa</p>
+                            </div>
+                        </div>
+                        <svg class="accordion-icon w-5 h-5 text-slate-400 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="accordion-content hidden px-6 pb-6 pt-2 border-t border-white/5 text-sm text-slate-300 space-y-3">
+                        <p>Desenvolvimento de argumentos originais, tratamentos visuais, decupagem rítmica e direção de fotografia para artistas independentes e campanhas.</p>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-3 py-1 rounded-lg bg-amber-400/10 text-amber-300 text-xs border border-amber-400/20">Storytelling Visual</span>
+                            <span class="px-3 py-1 rounded-lg bg-white/5 text-slate-300 text-xs border border-white/10">Color Grading</span>
+                            <span class="px-3 py-1 rounded-lg bg-white/5 text-slate-300 text-xs border border-white/10">Edição de Clipes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden">
+                    <button type="button" onclick="toggleAccordion(this)" class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                        <div class="flex items-center gap-4">
+                            <span class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 flex items-center justify-center font-display font-bold text-sm shrink-0">02</span>
+                            <div>
+                                <h3 class="font-display text-lg sm:text-xl font-bold text-white">Trilhas & Sound Design — DSBee</h3>
+                                <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Identidade sonora, promos de TV, trailers e temas originais</p>
+                            </div>
+                        </div>
+                        <svg class="accordion-icon w-5 h-5 text-slate-400 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="accordion-content hidden px-6 pb-6 pt-2 border-t border-white/5 text-sm text-slate-300 space-y-3">
+                        <p>Criação de trilhas instrumentais sob medida (15s, 30s, 60s e faixas completas) para campanhas, podcasts, chamadas promocionais e filmes, fundindo blues, jazz, ritmos brasileiros e eletrônica cinematográfica.</p>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-300 text-xs border border-emerald-500/20">DSBee Sounds</span>
+                            <span class="px-3 py-1 rounded-lg bg-white/5 text-slate-300 text-xs border border-white/10">Trilhas Originais</span>
+                            <span class="px-3 py-1 rounded-lg bg-white/5 text-slate-300 text-xs border border-white/10">Sound Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden">
+                    <button type="button" onclick="toggleAccordion(this)" class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                        <div class="flex items-center gap-4">
+                            <span class="w-10 h-10 rounded-xl bg-blue-900/50 text-blue-300 border border-blue-400/30 flex items-center justify-center font-display font-bold text-sm shrink-0">03</span>
+                            <div>
+                                <h3 class="font-display text-lg sm:text-xl font-bold text-white">Cinema Generativo & Projetos Culturais</h3>
+                                <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Direção de arte, literatura brasileira e pré-visualização com IA</p>
+                            </div>
+                        </div>
+                        <svg class="accordion-icon w-5 h-5 text-slate-400 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="accordion-content hidden px-6 pb-6 pt-2 border-t border-white/5 text-sm text-slate-300 space-y-3">
+                        <p>Pesquisa aplicada combinando direção de arte tradicional com ferramentas de inteligência artificial generativa para teasers conceituais, pré-visualização de cenas e projetos culturais.</p>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-3 py-1 rounded-lg bg-blue-500/10 text-blue-300 text-xs border border-blue-400/20">IA & Cinema</span>
+                            <span class="px-3 py-1 rounded-lg bg-white/5 text-slate-300 text-xs border border-white/10">Projetos Culturais</span>
+                            <span class="px-3 py-1 rounded-lg bg-white/5 text-slate-300 text-xs border border-white/10">Teasers Conceituais</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6. CONTATO & RODAPÉ ==================== -->
+    <section id="contato" class="py-24 px-4 sm:px-6 lg:px-8 relative border-t border-white/10">
+        <div class="max-w-4xl mx-auto">
+            <div class="glass-card rounded-3xl p-6 sm:p-10 md:p-12">
+                <div class="text-center mb-8">
+                    <span class="text-xs uppercase tracking-[0.24em] text-slate-400 font-semibold">Contato Comercial & Parcerias</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-2">Vamos Tirar Sua Ideia do Papel</h2>
+                    <p class="text-slate-400 text-sm sm:text-base mt-2">
+                        Entre em contato para direção audiovisual, edição, trilhas originais ou colaborações musicais.
+                    </p>
+                </div>
+
+                <!-- E-mail Direto + Copiar -->
+                <div class="mb-8 p-4 rounded-2xl bg-[#05060A]/80 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="text-center sm:text-left">
+                        <p class="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">E-mail Comercial</p>
+                        <a href="mailto:dsbee.media@gmail.com" class="text-base sm:text-lg font-semibold text-amber-300 hover:text-amber-200 transition-colors">
+                            dsbee.media@gmail.com
+                        </a>
+                    </div>
+                    <button type="button" id="copy-email-btn" onclick="copyEmail()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs sm:text-sm font-semibold border border-white/10 transition-all flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        <span id="copy-email-text">Copiar e-mail</span>
+                    </button>
+                </div>
+
+                <!-- Formulário Funcional (mailto:) -->
+                <form id="contact-form" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="contato-nome" class="block text-xs text-slate-400 mb-1.5">Seu Nome</label>
+                            <input type="text" id="contato-nome" required placeholder="Ex: João Silva" class="w-full px-4 py-3 rounded-xl bg-[#05060A]/80 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-amber-400 transition-colors">
+                        </div>
+                        <div>
+                            <label for="contato-frente" class="block text-xs text-slate-400 mb-1.5">Frente de Interesse</label>
+                            <select id="contato-frente" class="w-full px-4 py-3 rounded-xl bg-[#05060A]/80 border border-white/10 text-white focus:outline-none focus:border-emerald-400 transition-colors">
+                                <option value="Mago Audiovisual (Vídeo / Direção / Edição)">Mago Audiovisual (Vídeo / Direção / Edição)</option>
+                                <option value="DSBee Music (Selo / Trilha / Parceria)">DSBee Music (Selo / Trilha / Parceria)</option>
+                                <option value="Projeto Integrado (Imagem + Som)">Projeto Integrado (Imagem + Som)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="contato-assunto" class="block text-xs text-slate-400 mb-1.5">Assunto</label>
+                        <input type="text" id="contato-assunto" required placeholder="Ex: Orçamento de Videoclipe ou Trilha Original" class="w-full px-4 py-3 rounded-xl bg-[#05060A]/80 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-amber-400 transition-colors">
+                    </div>
+
+                    <div>
+                        <label for="contato-mensagem" class="block text-xs text-slate-400 mb-1.5">Mensagem</label>
+                        <textarea id="contato-mensagem" rows="4" required placeholder="Conte sobre sua ideia, referências ou prazo..." class="w-full px-4 py-3 rounded-xl bg-[#05060A]/80 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-amber-400 transition-colors resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-2xl bg-gradient-to-r from-[#1B2A59] via-amber-500 to-amber-400 hover:opacity-95 text-slate-950 font-bold text-sm sm:text-base shadow-xl transition-all active:scale-[0.99]">
+                        Enviar E-mail para dsbee.media@gmail.com
+                    </button>
+
+                    <div id="form-status" class="hidden p-4 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm text-center">
+                        Abrindo seu aplicativo de e-mail com a mensagem preenchida! Caso não abra automaticamente, copie o endereço acima.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé Limpo -->
+    <footer class="border-t border-white/10 py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-xs sm:text-sm text-slate-400 font-medium">
+                Mago Audiovisual // DSBee
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-medium">
+                <a href="https://open.spotify.com/artist/6OahEZ8b5p1Nli7Ttnaj6J" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-[#1DB954]/20 text-slate-300 hover:text-[#1DB954] border border-white/5 transition-all">Spotify</a>
+                <a href="https://www.tiktok.com/@dsbee.media" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-blue-900/40 text-slate-300 hover:text-white border border-white/5 transition-all">TikTok @dsbee.media</a>
+                <a href="https://www.youtube.com/@saturninobraga" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-[#FF0000]/20 text-slate-300 hover:text-red-400 border border-white/5 transition-all">YouTube @saturninobraga</a>
+                <a href="https://music.youtube.com/channel/UCKtVceMGe8HwtbIqpV760Vw" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-red-500/20 text-slate-300 hover:text-red-300 border border-white/5 transition-all">YouTube Music</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== MODAL CINEMATOGRÁFICO (YOUTUBE / GOOGLE DRIVE) ==================== -->
+    <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="glass-card rounded-3xl max-w-3xl w-full overflow-hidden border border-amber-400/35 shadow-2xl">
+            <div class="px-6 py-4 border-b border-white/10 flex items-center justify-between gap-4">
+                <div>
+                    <span id="modal-category" class="text-[11px] uppercase tracking-widest text-amber-300 font-bold"></span>
+                    <h3 id="modal-title" class="font-display text-lg sm:text-xl font-bold text-white"></h3>
+                </div>
+                <button type="button" onclick="closeVideoModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors shrink-0" aria-label="Fechar janela">
+                    ✕
+                </button>
+            </div>
+
+            <div id="modal-media-container" class="aspect-video w-full bg-black relative flex items-center justify-center">
+                <!-- Preenchido dinamicamente -->
+            </div>
+
+            <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <p id="modal-desc" class="text-sm text-slate-300 leading-relaxed"></p>
+                <a id="modal-external-link" href="#" target="_blank" rel="noopener noreferrer" class="hidden shrink-0 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-bold text-center transition-all">
+                    Abrir no YouTube ↗
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT INTERATIVO ==================== -->
+    <script>
+        // --- 1. MENU MOBILE ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- 2. CONTROLE DA VINHETA DE ABERTURA + FALLBACK AUTOMÁTICO ---
+        const vinhetaVideo = document.getElementById('hero-vinheta');
+        const vinhetaFallback = document.getElementById('vinheta-fallback');
+        const vinhetaControls = document.getElementById('vinheta-controls');
+
+        function showVinhetaFallback() {
+            if (vinhetaFallback) vinhetaFallback.classList.remove('hidden');
+            if (vinhetaControls) vinhetaControls.classList.add('hidden');
+            if (vinhetaVideo) vinhetaVideo.classList.add('hidden');
+        }
+
+        if (vinhetaVideo) {
+            vinhetaVideo.addEventListener('error', showVinhetaFallback);
+            const sourceEl = vinhetaVideo.querySelector('source');
+            if (sourceEl) {
+                sourceEl.addEventListener('error', showVinhetaFallback);
+            }
+
+            vinhetaVideo.addEventListener('play', () => updatePlayButton(false));
+            vinhetaVideo.addEventListener('pause', () => updatePlayButton(true));
+        }
+
+        function updatePlayButton(isPaused) {
+            const iconPause = document.getElementById('icon-pause');
+            const iconPlay = document.getElementById('icon-play');
+            const label = document.getElementById('play-label');
+            if (!iconPause || !iconPlay || !label) return;
+
+            if (isPaused) {
+                iconPause.classList.add('hidden');
+                iconPlay.classList.remove('hidden');
+                label.textContent = 'Reproduzir';
+            } else {
+                iconPause.classList.remove('hidden');
+                iconPlay.classList.add('hidden');
+                label.textContent = 'Pausar';
+            }
+        }
+
+        function toggleVinhetaPlay() {
+            if (!vinhetaVideo) return;
+            if (vinhetaVideo.paused || vinhetaVideo.ended) {
+                vinhetaVideo.play().catch(() => {});
+            } else {
+                vinhetaVideo.pause();
+            }
+        }
+
+        function toggleVinhetaMute() {
+            if (!vinhetaVideo) return;
+            vinhetaVideo.muted = !vinhetaVideo.muted;
+            const iconMuted = document.getElementById('icon-muted');
+            const iconUnmuted = document.getElementById('icon-unmuted');
+            const label = document.getElementById('mute-label');
+
+            if (vinhetaVideo.muted) {
+                iconMuted.classList.remove('hidden');
+                iconUnmuted.classList.add('hidden');
+                label.textContent = 'Ativar som';
+            } else {
+                iconMuted.classList.add('hidden');
+                iconUnmuted.classList.remove('hidden');
+                label.textContent = 'Silenciar';
+            }
+        }
+
+        function toggleVinhetaFullscreen() {
+            const container = document.getElementById('vinheta-container');
+            if (!container) return;
+            if (!document.fullscreenElement) {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen().catch(() => {});
+                } else if (vinhetaVideo && vinhetaVideo.webkitEnterFullscreen) {
+                    vinhetaVideo.webkitEnterFullscreen();
+                }
+            } else if (document.exitFullscreen) {
+                document.exitFullscreen().catch(() => {});
+            }
+        }
+
+        // --- 3. ALTERNADOR SUTIL DE FOCO (HUB / MAGO / DSBEE) ---
+        function setFocusMode(mode) {
+            const glowL = document.getElementById('hero-glow-left');
+            const glowR = document.getElementById('hero-glow-right');
+            const magoSec = document.getElementById('mago');
+            const dsbeeSec = document.getElementById('dsbee');
+
+            ['hub', 'mago', 'dsbee'].forEach(key => {
+                const btn = document.getElementById(`btn-mode-${key}`);
+                if (btn) btn.className = 'px-4 py-1.5 rounded-full text-xs font-semibold transition-all text-slate-400 hover:text-white';
+            });
+
+            const activeBtn = document.getElementById(`btn-mode-${mode}`);
+            if (!activeBtn) return;
+
+            if (mode === 'hub') {
+                activeBtn.className = 'px-4 py-1.5 rounded-full text-xs font-semibold transition-all bg-slate-100 text-slate-950 shadow';
+                glowL.className = 'absolute -top-24 -left-24 w-80 h-80 sm:w-[36rem] sm:h-[36rem] rounded-full bg-[#1B2A59]/45 blur-[130px] pointer-events-none transition-all duration-700';
+                glowR.className = 'absolute top-1/3 -right-24 w-80 h-80 sm:w-[34rem] sm:h-[34rem] rounded-full bg-amber-500/15 blur-[140px] pointer-events-none transition-all duration-700';
+                magoSec.classList.remove('opacity-60');
+                dsbeeSec.classList.remove('opacity-60');
+            } else if (mode === 'mago') {
+                activeBtn.className = 'px-4 py-1.5 rounded-full text-xs font-semibold transition-all bg-amber-400 text-slate-950 shadow shadow-amber-500/30';
+                glowL.className = 'absolute -top-24 -left-24 w-96 h-96 sm:w-[40rem] sm:h-[40rem] rounded-full bg-amber-500/25 blur-[130px] pointer-events-none transition-all duration-700';
+                glowR.className = 'absolute top-1/3 -right-24 w-80 h-80 sm:w-[34rem] sm:h-[34rem] rounded-full bg-[#1B2A59]/50 blur-[140px] pointer-events-none transition-all duration-700';
+                magoSec.classList.remove('opacity-60');
+                dsbeeSec.classList.add('opacity-60');
+            } else if (mode === 'dsbee') {
+                activeBtn.className = 'px-4 py-1.5 rounded-full text-xs font-semibold transition-all bg-emerald-400 text-slate-950 shadow shadow-emerald-500/25';
+                glowL.className = 'absolute -top-24 -left-24 w-80 h-80 sm:w-[36rem] sm:h-[36rem] rounded-full bg-emerald-500/20 blur-[130px] pointer-events-none transition-all duration-700';
+                glowR.className = 'absolute top-1/3 -right-24 w-96 h-96 sm:w-[38rem] sm:h-[38rem] rounded-full bg-[#1B2A59]/55 blur-[140px] pointer-events-none transition-all duration-700';
+                dsbeeSec.classList.remove('opacity-60');
+                magoSec.classList.add('opacity-60');
+            }
+        }
+
+        // --- 4. PORTFÓLIO MAGO AUDIOVISUAL + MODAL YOUTUBE / GOOGLE DRIVE ---
+        const portfolioItems = [
+            {
+                id: 'saudade',
+                featured: true,
+                title: 'Saudade — Clipe Oficial (DSBee)',
+                category: 'videoclipes',
+                categoryLabel: 'Videoclipes',
+                badge: 'VÍDEO REAL • DESTAQUE',
+                specs: 'Direção, Edição & Estética Cinematográfica',
+                desc: 'Clipe oficial do single "Saudade" (DSBee), unindo fotografia atmosférica e montagem musical assinada pela Mago Audiovisual.',
+                youtubeEmbed: 'https://www.youtube.com/embed/Hh2vQ1Jjrzc?autoplay=1&rel=0',
+                youtubeUrl: 'https://youtu.be/Hh2vQ1Jjrzc',
+                externalLabel: 'Abrir no YouTube ↗',
+                ctaText: 'Assistir clipe no player',
+                thumbnail: 'https://img.youtube.com/vi/Hh2vQ1Jjrzc/hqdefault.jpg'
+            },
+            {
+                id: 'showreel',
+                featured: false,
+                title: 'Showreel Direção & Edição',
+                category: 'promos',
+                categoryLabel: 'Promos & TV',
+                badge: 'VÍDEO REAL • SHOWREEL',
+                specs: 'Direção, Edição Comercial & Acabamento Visual',
+                desc: 'Vitrine principal reunindo cortes de direção, edição comercial e acabamento visual da Mago Audiovisual.',
+                youtubeEmbed: 'https://www.youtube.com/embed/DTVx-0AusoQ?autoplay=1&rel=0',
+                youtubeUrl: 'https://youtu.be/DTVx-0AusoQ',
+                externalLabel: 'Abrir no YouTube ↗',
+                ctaText: 'Assistir showreel no player',
+                thumbnail: 'https://img.youtube.com/vi/DTVx-0AusoQ/hqdefault.jpg',
+                gradient: 'from-[#0d1b3e]/80 via-slate-900 to-[#05070c]'
+            },
+            {
+                id: 'promos-chamadas',
+                featured: false,
+                title: 'Promos & Chamadas de TV',
+                category: 'promos',
+                categoryLabel: 'Promos & TV',
+                badge: 'PLAYLIST • YOUTUBE',
+                specs: 'Seleção de chamadas, promos e peças de TV',
+                desc: 'Playlist oficial com peças promocionais de alto impacto, edição rítmica, motion graphics e trilha sonora integrada.',
+                youtubeEmbed: 'https://www.youtube.com/embed/videoseries?list=PLCxI4VgCKuIJuKUpTKsMZO6TQYpv7UC2p&autoplay=1',
+                youtubeUrl: 'https://youtube.com/playlist?list=PLCxI4VgCKuIJuKUpTKsMZO6TQYpv7UC2p',
+                externalLabel: 'Abrir Playlist no YouTube ↗',
+                ctaText: 'Assistir playlist no player',
+                gradient: 'from-amber-950/50 via-slate-900 to-[#05070c]'
+            },
+            {
+                id: 'projetos-autorais',
+                featured: false,
+                title: 'Projetos Autorais & Conceito',
+                category: 'autorais',
+                categoryLabel: 'Projetos Autorais',
+                badge: 'VÍDEO REAL • AUTORAL',
+                specs: 'Direção de Arte, Roteiro Original & Cinema Generativo',
+                desc: 'Experimentos autorais combinando direção de arte, roteiro original e cinema generativo com sound design da DSBee.',
+                youtubeEmbed: 'https://drive.google.com/file/d/1JTLFW-PsK0IsrYfDcRfpIeIHPH-xb0hX/preview',
+                youtubeUrl: 'https://drive.google.com/file/d/1JTLFW-PsK0IsrYfDcRfpIeIHPH-xb0hX/view?usp=sharing',
+                externalLabel: 'Abrir no Google Drive ↗',
+                ctaText: 'Assistir vídeo no player',
+                gradient: 'from-slate-800/70 via-[#0d1b3e] to-[#05070c]'
+            }
+        ];
+
+        const portfolioGrid = document.getElementById('portfolio-grid');
+
+        function renderPortfolio(filter = 'todos') {
+            const list = filter === 'todos'
+                ? portfolioItems
+                : portfolioItems.filter(item => item.category === filter);
+
+            portfolioGrid.innerHTML = list.map(item => {
+                const isFeaturedSpan = (filter === 'todos' && item.featured) ? 'md:col-span-2 lg:col-span-2' : '';
+                const visualMarkup = item.thumbnail
+                    ? `<img src="${item.thumbnail}" alt="${item.title}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.style.display='none'">`
+                    : `<div class="w-full h-full bg-gradient-to-br ${item.gradient} flex items-end justify-center pb-5">
+                           <span class="text-[11px] uppercase tracking-[0.22em] text-slate-300/80 font-semibold px-4 text-center">${item.badge}</span>
+                       </div>`;
+
+                return `
+                    <article onclick="openProjectModal('${item.id}')" class="glass-card mago-hover rounded-2xl overflow-hidden cursor-pointer group flex flex-col ${isFeaturedSpan}">
+                        <div class="aspect-video w-full bg-black relative overflow-hidden flex items-center justify-center">
+                            ${visualMarkup}
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"></div>
+
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full ${item.featured ? 'bg-amber-400 text-slate-950 shadow-xl shadow-amber-500/35' : 'bg-amber-400/90 text-slate-950 shadow-lg shadow-amber-500/25'} flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+                                </div>
+                            </div>
+
+                            <div class="absolute top-3.5 left-3.5 flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md text-[11px] font-bold text-amber-300 border border-amber-400/40">
+                                    ${item.badge}
+                                </span>
+                                <span class="px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[11px] font-medium text-slate-300 border border-white/10">
+                                    ${item.categoryLabel}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-display font-bold text-lg sm:text-xl text-white group-hover:text-amber-300 transition-colors">${item.title}</h3>
+                                <p class="text-xs sm:text-sm text-slate-400 mt-1.5">${item.specs}</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-semibold text-amber-300">
+                                <span>${item.ctaText || 'Assistir no player'}</span>
+                                <span>→</span>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.className = 'filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium glass-nav text-slate-300 hover:text-amber-300 transition-all';
+                });
+                btn.className = 'filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-amber-400 text-slate-950 transition-all';
+                renderPortfolio(btn.dataset.filter);
+            });
+        });
+
+        function openProjectModal(id) {
+            const item = portfolioItems.find(p => p.id === id);
+            if (!item) return;
+
+            const modal = document.getElementById('video-modal');
+            const mediaContainer = document.getElementById('modal-media-container');
+            const extLink = document.getElementById('modal-external-link');
+
+            document.getElementById('modal-category').textContent = `${item.categoryLabel} • ${item.badge}`;
+            document.getElementById('modal-title').textContent = item.title;
+            document.getElementById('modal-desc').textContent = item.desc;
+
+            if (item.youtubeEmbed) {
+                mediaContainer.innerHTML = `
+                    <iframe class="w-full h-full" src="${item.youtubeEmbed}" title="${item.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                `;
+                extLink.href = item.youtubeUrl;
+                extLink.textContent = item.externalLabel || 'Abrir no YouTube ↗';
+                extLink.classList.remove('hidden');
+            } else {
+                mediaContainer.innerHTML = `
+                    <div class="text-center p-8 max-w-md">
+                        <div class="w-16 h-16 rounded-2xl bg-amber-400/15 border border-amber-400/30 text-amber-300 flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        </div>
+                        <p class="font-display font-bold text-white text-lg">Espaço Pronto para Vídeo</p>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-2">Adicione a URL do YouTube ou Vimeo no campo <code class="text-amber-300">youtubeEmbed</code> deste item no código.</p>
+                    </div>
+                `;
+                extLink.classList.add('hidden');
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openSaudadeModal() {
+            openProjectModal('saudade');
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            const mediaContainer = document.getElementById('modal-media-container');
+            mediaContainer.innerHTML = ''; // Remove o iframe para interromper o vídeo imediatamente
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('video-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'video-modal') closeVideoModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeVideoModal();
+        });
+
+        // --- 5. ACORDEÃO DO LABORATÓRIO DE IDEIAS ---
+        function toggleAccordion(button) {
+            const card = button.parentElement;
+            const content = card.querySelector('.accordion-content');
+            const icon = button.querySelector('.accordion-icon');
+            const isHidden = content.classList.contains('hidden');
+
+            if (isHidden) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // --- 6. COPIAR E-MAIL (COMPATÍVEL COM IFRAME) ---
+        function copyEmail() {
+            const email = 'dsbee.media@gmail.com';
+            const btnText = document.getElementById('copy-email-text');
+            const btn = document.getElementById('copy-email-btn');
+
+            try {
+                const tempInput = document.createElement('textarea');
+                tempInput.value = email;
+                tempInput.style.position = 'fixed';
+                tempInput.style.opacity = '0';
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                tempInput.setSelectionRange(0, 99999);
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+
+                btnText.textContent = 'E-mail copiado!';
+                btn.classList.add('border-emerald-500/50', 'text-emerald-300');
+
+                setTimeout(() => {
+                    btnText.textContent = 'Copiar e-mail';
+                    btn.classList.remove('border-emerald-500/50', 'text-emerald-300');
+                }, 2500);
+            } catch (err) {
+                btnText.textContent = email;
+            }
+        }
+
+        // --- 7. FORMULÁRIO DE CONTATO (MAILTO) ---
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nome = document.getElementById('contato-nome').value.trim();
+            const frente = document.getElementById('contato-frente').value;
+            const assunto = document.getElementById('contato-assunto').value.trim();
+            const mensagem = document.getElementById('contato-mensagem').value.trim();
+
+            const subjectEncoded = encodeURIComponent(`[${frente}] ${assunto}`);
+            const bodyEncoded = encodeURIComponent(
+                `Olá Mago Audiovisual // DSBee,\n\nNome: ${nome}\nFrente: ${frente}\n\nMensagem:\n${mensagem}`
+            );
+
+            const mailtoUrl = `mailto:dsbee.media@gmail.com?subject=${subjectEncoded}&body=${bodyEncoded}`;
+
+            const statusBox = document.getElementById('form-status');
+            statusBox.classList.remove('hidden');
+
+            window.location.href = mailtoUrl;
+        });
+
+        // Inicialização
+        renderPortfolio('todos');
+    </script>
+</body>
+</html>
